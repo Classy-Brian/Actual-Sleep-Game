@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://bdldtyfnxcial"]
 
 [ext_resource type="Texture2D" uid="uid://ceo4i04y3amsb" path="res://assets/images/enemies/Slime_Green.png" id="1_371uh"]
-[ext_resource type="Script" uid="uid://cqufvm2nmc3ce" path="res://scripts/slime.gd" id="1_p2gj0"]
+[ext_resource type="Script" uid="uid://cqufvm2nmc3ce" path="res://scripts/chaser.gd" id="1_p2gj0"]
 [ext_resource type="AudioStream" uid="uid://cf1hrhccrowy1" path="res://assets/audio/hit_enemy.wav" id="3_n6pvg"]
-[ext_resource type="PackedScene" uid="uid://cgq8lr0cdxlk3" path="res://scenes/health_bar.tscn" id="4_pjw23"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2gj0"]
 atlas = ExtResource("1_371uh")
@@ -196,19 +195,13 @@ shape = SubResource("CircleShape2D_7kayq")
 stream = ExtResource("3_n6pvg")
 pitch_scale = 0.75
 
-[node name="HealthBar" parent="." unique_id=929204070 instance=ExtResource("4_pjw23")]
-position = Vector2(-9, 9)
-
 [node name="Hitbox" type="Area2D" parent="." unique_id=1134856430]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1772246854]
 position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_n102l")
 
-[node name="AttackTimer" type="Timer" parent="." unique_id=681594586]
-
 [connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
 [connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bdldtyfnxcial" path="res://scenes/slime.tscn" id="4_o1chu"]
 [ext_resource type="Texture2D" uid="uid://bay2wbax82ulu" path="res://assets/images/tileset/Outdoor_Decor_Free.png" id="5_53c65"]
 [ext_resource type="Texture2D" uid="uid://borpb2lohskbc" path="res://assets/images/tileset/Bridge_Wood.png" id="6_53c65"]
+[ext_resource type="PackedScene" uid="uid://ocbc55ki7fgl" path="res://scenes/pillow_pickup.tscn" id="9_43bxi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uk53i"]
 texture = ExtResource("1_md458")
@@ -219,3 +220,6 @@ position = Vector2(5, -5)
 shape = SubResource("RectangleShape2D_7kayq")
 
 [node name="Items" type="Node2D" parent="." unique_id=1522670]
+
+[node name="HealthPickup" parent="." unique_id=1707517472 instance=ExtResource("9_43bxi")]
+position = Vector2(252, 406)

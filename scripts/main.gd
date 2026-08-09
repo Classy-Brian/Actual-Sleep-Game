@@ -27,7 +27,7 @@ func _load_level(level_number: int) -> void:
 func _setup_level(level_root: Node) -> void:
 	# Connect Player
 	var player = level_root.get_node("Player")
-	$HUD.set_player(player)
+	#$HUD.set_player(player)
 	player.died.connect(_on_player_died)
 	# Connect exit
 	var exit = level_root.get_node_or_null("Exit")
@@ -39,14 +39,25 @@ func _setup_level(level_root: Node) -> void:
 # ------------------------------------------------------------------------------
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		level += 1
-		call_deferred("_load_level", level)
+		# Check our global singleton to see if we have enough keys
+		if PlayersStats.can_exit():
+			print("Escaped! Loading next level...")
+			level += 1
+			PlayersStats.reset()
+			call_deferred("_load_level", level)
+		else:
+			print("You need more keys! You only have: ", PlayersStats.keys_collected)
 
 func _on_player_died() -> void:
 	# Pause for 1 second before resetting eveything
 	await get_tree().create_timer(1.0).timeout
-	await hud.fade(1.0)
+	
+	if hud and hud.has_method("fade"):
+		await hud.fade(1.0)
+		
 	level = 1
 	PlayersStats.reset()
 	_load_level(level)
-	await hud.fade(0.0)
+	
+	if hud and hud.has_method("fade"):
+		await hud.fade(0.0)

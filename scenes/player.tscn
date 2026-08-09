@@ -432,9 +432,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s64ca"]
 size = Vector2(13, 6.25)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n102l"]
-size = Vector2(15, 15)
-
 [node name="Player" type="CharacterBody2D" unique_id=411631660]
 scale = Vector2(4, 4)
 script = ExtResource("1_g2els")
@@ -454,15 +451,6 @@ pitch_scale = 3.0
 [node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=1775058754]
 stream = ExtResource("4_dqkch")
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=1073020678]
-position = Vector2(7.5, -0.5)
-collision_mask = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1475633126]
-position = Vector2(-0.25, -0.75)
-shape = SubResource("RectangleShape2D_n102l")
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1391045396]
 limit_left = 0
 limit_top = 0
@@ -474,4 +462,3 @@ wait_time = 0.5
 one_shot = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
