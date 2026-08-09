@@ -89,13 +89,13 @@ animations = [{
 size = Vector2(28, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7kayq"]
-radius = 215.00523
+radius = 132.00024
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n102l"]
 size = Vector2(30, 31)
 
 [node name="Demon" type="CharacterBody2D" unique_id=1145864337]
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_ofewj")
