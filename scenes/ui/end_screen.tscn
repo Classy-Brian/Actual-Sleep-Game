@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://do60lm1sw4hdc"]
+
+[ext_resource type="Texture2D" uid="uid://qq872jmegl6d" path="res://assets/images/UI/gameover_won.png" id="1_4ttpn"]
+[ext_resource type="Script" uid="uid://p62maepapmj1" path="res://scripts/end_screen.gd" id="1_53v5j"]
+[ext_resource type="Texture2D" uid="uid://bb6xrws4f4tg" path="res://assets/images/UI/restart_normal.png" id="2_wgyui"]
+[ext_resource type="Texture2D" uid="uid://cnm5onls5kp4k" path="res://assets/images/UI/restart_hover.png" id="3_53v5j"]
+
+[node name="EndScreen" type="Control" unique_id=1727981623]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_53v5j")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1786175547]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 672.0
+texture = ExtResource("1_4ttpn")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=511238324]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 227.0
+offset_right = 256.0
+offset_bottom = 271.0
+texture_normal = ExtResource("2_wgyui")
+texture_hover = ExtResource("3_53v5j")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

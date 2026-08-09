@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bftph3dfdeana" path="res://scripts/main_menu.gd" id="1_fe2o3"]
 [ext_resource type="Texture2D" uid="uid://d3rosasyo7hcd" path="res://assets/images/UI/MainMenuBG_SpriteSheet.png" id="1_sl1te"]
+[ext_resource type="Texture2D" uid="uid://bdvlcxxk1jrno" path="res://assets/images/UI/start_normal.png" id="3_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://c0hqnoumqesdy" path="res://assets/images/UI/start_hover.png" id="4_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://dnpj3rsx3efxn" path="res://assets/images/UI/title.png" id="5_x2yvf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fe2o3"]
 atlas = ExtResource("1_sl1te")
@@ -79,21 +82,27 @@ frame_progress = 0.26467457
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1731123662]
 layout_mode = 1
-anchors_preset = 6
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 1.0
+offset_left = -456.0
+offset_top = -661.0
+offset_right = -16.0
+offset_bottom = -392.0
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
+offset_transform_enabled = true
 
-[node name="START" type="Button" parent="VBoxContainer" unique_id=840229059]
+[node name="TitleImage" type="TextureRect" parent="VBoxContainer" unique_id=655396942]
 layout_mode = 2
-text = "START"
+texture = ExtResource("5_x2yvf")
 
-[node name="QUIT" type="Button" parent="VBoxContainer" unique_id=2035467589]
+[node name="StartButton" type="TextureButton" parent="VBoxContainer" unique_id=531147565]
 layout_mode = 2
-text = "QUIT"
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_m1kxf")
+texture_hover = ExtResource("4_x2yvf")
 
-[connection signal="pressed" from="VBoxContainer/START" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]

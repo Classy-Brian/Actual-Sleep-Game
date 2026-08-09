@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://sv6aup7fbgnw"]
+
+[ext_resource type="Texture2D" uid="uid://tfasl8kqv6lx" path="res://assets/images/UI/gameover_lost.png" id="1_60xr3"]
+[ext_resource type="Script" uid="uid://ctgdmdtx6mmdf" path="res://scripts/game_over.gd" id="1_vfrx6"]
+[ext_resource type="Texture2D" uid="uid://bb6xrws4f4tg" path="res://assets/images/UI/restart_normal.png" id="2_x6o8e"]
+[ext_resource type="Texture2D" uid="uid://cnm5onls5kp4k" path="res://assets/images/UI/restart_hover.png" id="3_vfrx6"]
+
+[node name="GameOverScreen" type="Control" unique_id=2055984911]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vfrx6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=585504341]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 672.0
+texture = ExtResource("1_60xr3")
+
+[node name="RestartButton" type="TextureButton" parent="." unique_id=2111726536]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 142.0
+offset_right = 740.0
+offset_bottom = 186.0
+texture_normal = ExtResource("2_x6o8e")
+texture_hover = ExtResource("3_vfrx6")
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

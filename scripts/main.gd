@@ -16,13 +16,16 @@ func _ready() -> void:
 func _load_level(level_number: int) -> void:
 	if current_level_root:
 		current_level_root.queue_free()
-		
+	
 	# Change level
 	var level_path = "res://scenes/levels/level_%s.tscn" % level_number
-	current_level_root = load(level_path).instantiate()
-	add_child(current_level_root)
-	current_level_root.name = "LevelRoot"
-	_setup_level(current_level_root)
+	if ResourceLoader.exists(level_path):
+		current_level_root = load(level_path).instantiate()
+		add_child(current_level_root)
+		current_level_root.name = "LevelRoot"
+		_setup_level(current_level_root)
+	else:
+		get_tree().change_scene_to_file("res://scenes/ui/end_screen.tscn")
 
 func _setup_level(level_root: Node) -> void:
 	# Connect Player
@@ -55,9 +58,10 @@ func _on_player_died() -> void:
 	if hud and hud.has_method("fade"):
 		await hud.fade(1.0)
 		
-	level = 1
-	PlayersStats.reset()
-	_load_level(level)
+	get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
+	#level = 1
+	#PlayersStats.reset()
+	#_load_level(level)
 	
 	if hud and hud.has_method("fade"):
 		await hud.fade(0.0)
