@@ -9,6 +9,7 @@
 script = ExtResource("1_0wfyh")
 
 [node name="LevelRoot" parent="." unique_id=1489910916 instance=ExtResource("3_sugp2")]
+position = Vector2(69, 56)
 
 [node name="HUD" parent="." unique_id=1750825400 instance=ExtResource("3_jyhfs")]
 
