@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b7xldcecflqtf"]
 
 [ext_resource type="PackedScene" uid="uid://dd2aoh2yance4" path="res://scenes/levels/level_1.tscn" id="1_j2425"]
-[ext_resource type="PackedScene" uid="uid://bdldtyfnxcial" path="res://scenes/slime.tscn" id="2_g2h2n"]
+[ext_resource type="PackedScene" uid="uid://bdldtyfnxcial" path="res://scenes/demon.tscn" id="2_g2h2n"]
 
 [node name="LevelRoot" unique_id=1489910916 instance=ExtResource("1_j2425")]
 

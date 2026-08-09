@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bdldtyfnxcial"]
+
+[ext_resource type="Script" uid="uid://cqufvm2nmc3ce" path="res://scripts/chaser.gd" id="1_ofewj"]
+[ext_resource type="Texture2D" uid="uid://ubgw0kl73wh2" path="res://assets/images/enemies/enemy.png" id="2_yt4xr"]
+[ext_resource type="AudioStream" uid="uid://cf1hrhccrowy1" path="res://assets/audio/hit_enemy.wav" id="3_g6uwn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
+atlas = ExtResource("2_yt4xr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2npkn"]
+atlas = ExtResource("2_yt4xr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd6lc"]
+atlas = ExtResource("2_yt4xr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gstla"]
+atlas = ExtResource("2_yt4xr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5wyi"]
+atlas = ExtResource("2_yt4xr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l8pv"]
+atlas = ExtResource("2_yt4xr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnioy"]
+atlas = ExtResource("2_yt4xr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xjuo"]
+atlas = ExtResource("2_yt4xr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a02ik"]
+atlas = ExtResource("2_yt4xr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kayq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjw23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2npkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd6lc")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gstla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5wyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l8pv")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnioy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xjuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a02ik")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kayq"]
+size = Vector2(28, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kayq"]
+radius = 215.00523
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n102l"]
+size = Vector2(30, 31)
+
+[node name="Demon" type="CharacterBody2D" unique_id=1145864337]
+scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_ofewj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=946041813]
+sprite_frames = SubResource("SpriteFrames_7kayq")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=516292541]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7kayq")
+
+[node name="Sight" type="Area2D" parent="." unique_id=845151961]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=1399964202]
+shape = SubResource("CircleShape2D_7kayq")
+
+[node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=414251391]
+stream = ExtResource("3_g6uwn")
+pitch_scale = 0.75
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1134856430]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1772246854]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_n102l")
+
+[connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]

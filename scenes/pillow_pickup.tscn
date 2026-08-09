@@ -1,20 +1,21 @@
 [gd_scene format=3 uid="uid://ocbc55ki7fgl"]
 
 [ext_resource type="Script" uid="uid://dsmvjbe3nvlci" path="res://scripts/key_item.gd" id="1_r8tdp"]
-[ext_resource type="Texture2D" uid="uid://b6actsp4eftja" path="res://assets/images/items/IconHeart.png" id="2_wuth0"]
+[ext_resource type="Texture2D" uid="uid://c5iijled5rpcf" path="res://assets/images/items/pillow.png" id="2_r8tdp"]
 [ext_resource type="AudioStream" uid="uid://q0ske8ng4rj5" path="res://assets/audio/health_pickup.wav" id="3_dga4x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7kayq"]
-size = Vector2(14, 12)
+size = Vector2(31, 24)
 
 [node name="HealthPickup" type="Area2D" unique_id=1707517472]
 scale = Vector2(3, 3)
 script = ExtResource("1_r8tdp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=139384204]
-texture = ExtResource("2_wuth0")
+texture = ExtResource("2_r8tdp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2105812290]
+position = Vector2(0.5, 2.0000005)
 shape = SubResource("RectangleShape2D_7kayq")
 
 [node name="CollectedSound" type="AudioStreamPlayer2D" parent="." unique_id=1584785407]
