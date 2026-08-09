@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED: int = 100
+const SPEED: int = 200
 
 var target = null
 
