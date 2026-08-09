@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cqufvm2nmc3ce" path="res://scripts/chaser.gd" id="1_ofewj"]
 [ext_resource type="Texture2D" uid="uid://ubgw0kl73wh2" path="res://assets/images/enemies/enemy.png" id="2_yt4xr"]
-[ext_resource type="AudioStream" uid="uid://cf1hrhccrowy1" path="res://assets/audio/hit_enemy.wav" id="3_g6uwn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
 atlas = ExtResource("2_yt4xr")
@@ -113,10 +112,6 @@ shape = SubResource("RectangleShape2D_7kayq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sight" unique_id=1399964202]
 shape = SubResource("CircleShape2D_7kayq")
-
-[node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=414251391]
-stream = ExtResource("3_g6uwn")
-pitch_scale = 0.75
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1134856430]
 

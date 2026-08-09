@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://dtds00g36grs"]
 
 [ext_resource type="Script" uid="uid://c36hca5qxh3aw" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="AudioStream" uid="uid://c14j1wyfxs2m0" path="res://assets/audio/woosh.wav" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bpdwmgmgqw8p8" path="res://assets/images/player/player.png" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://uitm4toc018e" path="res://assets/images/player/sleeping.png" id="3_tuyoq"]
-[ext_resource type="AudioStream" uid="uid://bqseq7g3xsdg8" path="res://assets/audio/player_damage.wav" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("3_qlg0r")
@@ -224,13 +222,6 @@ animation = &"sleeping"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1798421430]
 position = Vector2(0, 7.875)
 shape = SubResource("RectangleShape2D_s64ca")
-
-[node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=233868160]
-stream = ExtResource("3_qhqgy")
-pitch_scale = 3.0
-
-[node name="TakeDamage" type="AudioStreamPlayer2D" parent="." unique_id=1775058754]
-stream = ExtResource("4_dqkch")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1391045396]
 limit_left = 0
