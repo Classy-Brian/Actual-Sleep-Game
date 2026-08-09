@@ -55,3 +55,8 @@ func get_caught() -> void:
 	animated_sprite_2d.play("dying")
 	await animated_sprite_2d.animation_finished
 	died.emit()
+
+func go_to_sleep():
+	alive = false
+	velocity = Vector2.ZERO
+	animated_sprite_2d.play("sleeping")

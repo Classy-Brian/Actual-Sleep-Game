@@ -4,6 +4,7 @@ extends Node2D
 
 var level: int = 1
 var current_level_root: Node = null
+var is_transitioning: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,11 +42,14 @@ func _setup_level(level_root: Node) -> void:
 # SIGNAL HANDLERS
 # ------------------------------------------------------------------------------
 func _on_exit_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "Player" and not is_transitioning:
 		# Check our global singleton to see if we have enough keys
 		if PlayersStats.can_exit():
-			print("Escaped! Loading next level...")
+			is_transitioning = true
+			body.go_to_sleep()
+			await body.get_node("AnimatedSprite2D").animation_finished
 			level += 1
+			is_transitioning = false
 			PlayersStats.reset()
 			call_deferred("_load_level", level)
 		else:

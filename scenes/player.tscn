@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c36hca5qxh3aw" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="AudioStream" uid="uid://c14j1wyfxs2m0" path="res://assets/audio/woosh.wav" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://bpdwmgmgqw8p8" path="res://assets/images/player/player.png" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://uitm4toc018e" path="res://assets/images/player/sleeping.png" id="3_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://bqseq7g3xsdg8" path="res://assets/audio/player_damage.wav" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
@@ -84,6 +85,18 @@ region = Rect2(64, 64, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
 atlas = ExtResource("3_qlg0r")
 region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
+atlas = ExtResource("3_tuyoq")
+region = Rect2(0, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
+atlas = ExtResource("3_tuyoq")
+region = Rect2(64, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
+atlas = ExtResource("3_tuyoq")
+region = Rect2(128, 0, 64, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7kayq"]
 animations = [{
@@ -181,6 +194,20 @@ animations = [{
 "loop": 1,
 "name": &"run_up",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ni07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l71n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke2ow")
+}],
+"loop": 0,
+"name": &"sleeping",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s64ca"]
@@ -192,7 +219,7 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=710010203]
 sprite_frames = SubResource("SpriteFrames_7kayq")
-animation = &"run_up"
+animation = &"sleeping"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1798421430]
 position = Vector2(0, 7.875)
