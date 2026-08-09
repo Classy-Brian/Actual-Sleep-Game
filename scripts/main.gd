@@ -7,7 +7,7 @@ var current_level_root: Node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	current_level_root = get_node("LevelRoot")
+	current_level_root = get_node_or_null("LevelRoot")
 	_load_level(level)
 
 # ------------------------------------------------------------------------------

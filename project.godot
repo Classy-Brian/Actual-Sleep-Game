@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sleep-Game"
-run/main_scene="uid://d0h5u6lttm54l"
+run/main_scene="uid://bllqfwag6niox"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -21,8 +21,7 @@ PlayersStats="*uid://cruijxriq8xtk"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_height=672
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

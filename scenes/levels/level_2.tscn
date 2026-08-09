@@ -8,11 +8,11 @@
 [node name="Player" parent="." index="2" unique_id=411631660]
 position = Vector2(907, 1568)
 
-[node name="HealthPickup4" parent="." index="7" unique_id=1707517472 instance=ExtResource("2_g2h2n")]
+[node name="HealthPickup7" parent="." index="7" unique_id=1707517472 instance=ExtResource("2_g2h2n")]
 position = Vector2(938.00006, 1434)
 
-[node name="HealthPickup5" parent="." index="8" unique_id=1538253325 instance=ExtResource("2_g2h2n")]
+[node name="HealthPickup8" parent="." index="8" unique_id=1538253325 instance=ExtResource("2_g2h2n")]
 position = Vector2(831, 1444)
 
-[node name="HealthPickup6" parent="." index="9" unique_id=1558417442 instance=ExtResource("2_g2h2n")]
+[node name="HealthPickup9" parent="." index="9" unique_id=1558417442 instance=ExtResource("2_g2h2n")]
 position = Vector2(722, 1495)

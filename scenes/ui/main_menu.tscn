@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://bllqfwag6niox"]
+
+[ext_resource type="Script" uid="uid://bftph3dfdeana" path="res://scripts/main_menu.gd" id="1_fe2o3"]
+[ext_resource type="Texture2D" uid="uid://d3rosasyo7hcd" path="res://assets/images/UI/MainMenuBG_SpriteSheet.png" id="1_sl1te"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe2o3"]
+atlas = ExtResource("1_sl1te")
+region = Rect2(0, 0, 384, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g8jr"]
+atlas = ExtResource("1_sl1te")
+region = Rect2(384, 0, 384, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1kxf"]
+atlas = ExtResource("1_sl1te")
+region = Rect2(768, 0, 384, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2yvf"]
+atlas = ExtResource("1_sl1te")
+region = Rect2(1152, 0, 384, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhagc"]
+atlas = ExtResource("1_sl1te")
+region = Rect2(1536, 0, 384, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btxxm"]
+atlas = ExtResource("1_sl1te")
+region = Rect2(0, 224, 384, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb0q5"]
+atlas = ExtResource("1_sl1te")
+region = Rect2(384, 224, 384, 224)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kayq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fe2o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g8jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1kxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2yvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhagc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btxxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb0q5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Control" unique_id=603379298]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fe2o3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1156515616]
+position = Vector2(577.85724, 334.5)
+scale = Vector2(3.0044646, 3.0044641)
+sprite_frames = SubResource("SpriteFrames_7kayq")
+autoplay = "default"
+frame = 4
+frame_progress = 0.26467457
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1731123662]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="START" type="Button" parent="VBoxContainer" unique_id=840229059]
+layout_mode = 2
+text = "START"
+
+[node name="QUIT" type="Button" parent="VBoxContainer" unique_id=2035467589]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/START" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/QUIT" to="." method="_on_quit_pressed"]
