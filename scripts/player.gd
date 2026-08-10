@@ -8,7 +8,7 @@ var last_direction: Vector2 = Vector2.RIGHT
 var alive: bool = true
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var take_damage_sound: AudioStreamPlayer2D = $TakeDamage
+@onready var woopwoop: AudioStreamPlayer = $woopwoop
 
 func _physics_process(_delta: float) -> void:
 	if alive:
@@ -53,6 +53,7 @@ func get_caught() -> void:
 	alive = false
 	velocity = Vector2.ZERO # Ensure we stop sliding
 	animated_sprite_2d.play("dying")
+	woopwoop.play()
 	await animated_sprite_2d.animation_finished
 	died.emit()
 

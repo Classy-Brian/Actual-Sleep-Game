@@ -923,10 +923,10 @@ tile_map_data = PackedByteArray("AAAkAAEAAwAMAAcAAAAkAAIAAwAMAAYAAAAlAAEAAwANAAc
 tile_set = SubResource("TileSet_4yk0h")
 
 [node name="Player" parent="." index="2" unique_id=411631660]
-position = Vector2(1319, 1572)
+position = Vector2(801, 1545)
 
 [node name="Demon2" parent="Enemies" parent_id_path=PackedInt32Array(911149425) index="0" unique_id=1560512302 instance=ExtResource("2_6iamk")]
-position = Vector2(1665, 1406)
+position = Vector2(1330, 1203)
 
 [node name="Demon3" parent="Enemies" parent_id_path=PackedInt32Array(911149425) index="1" unique_id=1145864337 instance=ExtResource("2_6iamk")]
 position = Vector2(1498, 318)
@@ -943,10 +943,10 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_excbq")
 
 [node name="HealthPickup" parent="." index="6" unique_id=1707517472]
-position = Vector2(314, 556)
+position = Vector2(748.00006, 1475)
 
 [node name="HealthPickup2" parent="." index="7" unique_id=1221402753 instance=ExtResource("3_nsrm0")]
-position = Vector2(1317.0001, 1215)
+position = Vector2(914.0001, 1585)
 
 [node name="HealthPickup3" parent="." index="8" unique_id=1562833232 instance=ExtResource("3_nsrm0")]
-position = Vector2(1826, 524)
+position = Vector2(925, 1481)

@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bftph3dfdeana" path="res://scripts/main_menu.gd" id="1_fe2o3"]
 [ext_resource type="Texture2D" uid="uid://d3rosasyo7hcd" path="res://assets/images/UI/MainMenuBG_SpriteSheet.png" id="1_sl1te"]
-[ext_resource type="Texture2D" uid="uid://bdvlcxxk1jrno" path="res://assets/images/UI/start_normal.png" id="3_m1kxf"]
-[ext_resource type="Texture2D" uid="uid://c0hqnoumqesdy" path="res://assets/images/UI/start_hover.png" id="4_x2yvf"]
-[ext_resource type="Texture2D" uid="uid://dnpj3rsx3efxn" path="res://assets/images/UI/title.png" id="5_x2yvf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fe2o3"]
 atlas = ExtResource("1_sl1te")
@@ -63,6 +60,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fe2o3"]
+load_path = "res://.godot/imported/Title.png-8566046ba8f5aa2eaba777e41958e4c8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m1kxf"]
+load_path = "res://.godot/imported/buttons2sleep.png-16eed1278f209151d17c3ed2a8b85d67.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1g8jr"]
+load_path = "res://.godot/imported/buttons1sleep.png-4204d08c739b7b4fb5f513f58f86263d.ctex"
+
 [node name="MainMenu" type="Control" unique_id=603379298]
 layout_mode = 3
 anchors_preset = 15
@@ -87,22 +93,26 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -456.0
-offset_top = -661.0
-offset_right = -16.0
-offset_bottom = -392.0
+offset_left = -527.0
+offset_top = -520.0
+offset_right = -87.0
+offset_bottom = -70.0
 grow_horizontal = 0
 grow_vertical = 0
 offset_transform_enabled = true
 
 [node name="TitleImage" type="TextureRect" parent="VBoxContainer" unique_id=655396942]
 layout_mode = 2
-texture = ExtResource("5_x2yvf")
+offset_transform_enabled = true
+offset_transform_scale = Vector2(3, 3)
+texture = SubResource("CompressedTexture2D_fe2o3")
 
 [node name="StartButton" type="TextureButton" parent="VBoxContainer" unique_id=531147565]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("3_m1kxf")
-texture_hover = ExtResource("4_x2yvf")
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture_normal = SubResource("CompressedTexture2D_m1kxf")
+texture_hover = SubResource("CompressedTexture2D_1g8jr")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_pressed"]

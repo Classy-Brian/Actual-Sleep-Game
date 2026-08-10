@@ -48,10 +48,12 @@ func _on_exit_body_entered(body: Node2D) -> void:
 			is_transitioning = true
 			body.go_to_sleep()
 			await body.get_node("AnimatedSprite2D").animation_finished
+			await hud.fade(1.0)
 			level += 1
 			is_transitioning = false
 			PlayersStats.reset()
 			call_deferred("_load_level", level)
+			await hud.fade(0.0)
 		else:
 			print("You need more keys! You only have: ", PlayersStats.keys_collected)
 

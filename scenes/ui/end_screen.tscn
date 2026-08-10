@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://p62maepapmj1" path="res://scripts/end_screen.gd" id="1_53v5j"]
 [ext_resource type="Texture2D" uid="uid://bb6xrws4f4tg" path="res://assets/images/UI/restart_normal.png" id="2_wgyui"]
 [ext_resource type="Texture2D" uid="uid://cnm5onls5kp4k" path="res://assets/images/UI/restart_hover.png" id="3_53v5j"]
+[ext_resource type="AudioStream" uid="uid://b811l1ot0po1s" path="res://assets/audio/Victory Screech!.wav" id="5_e4cmn"]
 
 [node name="EndScreen" type="Control" unique_id=1727981623]
 layout_mode = 3
@@ -22,11 +23,18 @@ texture = ExtResource("1_4ttpn")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=511238324]
 layout_mode = 0
-offset_left = 150.0
-offset_top = 227.0
-offset_right = 256.0
-offset_bottom = 271.0
+offset_left = 223.0
+offset_top = 445.0
+offset_right = 473.0
+offset_bottom = 552.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
 texture_normal = ExtResource("2_wgyui")
 texture_hover = ExtResource("3_53v5j")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=62584419]
+stream = ExtResource("5_e4cmn")
+volume_db = -15.0
+autoplay = true
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
