@@ -16,8 +16,8 @@ Play the HTML5 web build directly in your browser: [Sleep Mart on itch.io](https
 * **The 2-Color Constraint**: This game was designed under the strict B1T Jam 5 rule that allows only 2 visible colors on screen. 
 
 ## 👥 The Team
-* **Laysus**: Technical Lead, Programming, Game Logic & Level Design.
-* **couieroreo**: Art Lead, UI & Map Layouts.
+* **Classy-Brian (Laysus)**: Technical Lead, Programming, Game Logic & Level Design.
+* **overoreo (couieroreo)**: Art Lead, UI & Map Layouts.
 
 ## 🎧 Audio Credits
 A huge thank you to the following creators on Freesound.org (and Bikini Bottom) for the audio used in this game:
